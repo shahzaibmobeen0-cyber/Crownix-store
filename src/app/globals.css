@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-onyx text-ivory font-body antialiased;
+  }
+  ::selection {
+    @apply bg-champagne/30 text-ivory;
+  }
+  :focus-visible {
+    outline: 2px solid #c6a664;
+    outline-offset: 3px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@layer components {
+  .glass {
+    @apply bg-white/5 backdrop-blur-xl border border-white/10;
+  }
+  .container-lux {
+    @apply mx-auto w-full max-w-[1440px] px-6 md:px-10 lg:px-16;
+  }
+  .eyebrow {
+    @apply font-mono text-[11px] uppercase tracking-widest2 text-champagne;
+  }
+  .btn-gold {
+    @apply inline-flex items-center justify-center gap-2 rounded-none bg-champagne px-8 py-4
+      font-mono text-[11px] uppercase tracking-widest2 text-onyx transition-all duration-300
+      hover:bg-champagne-light hover:shadow-gold active:scale-[0.98];
+  }
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 rounded-none border border-champagne/50 px-8 py-4
+      font-mono text-[11px] uppercase tracking-widest2 text-ivory transition-all duration-300
+      hover:border-champagne hover:bg-champagne/10 active:scale-[0.98];
+  }
+}
+
+/* Custom scrollbar — thin, gold-tinted, luxury feel */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0a0b;
+}
+::-webkit-scrollbar-thumb {
+  background: #5b5e63;
+  border-radius: 0;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #c6a664;
+}
